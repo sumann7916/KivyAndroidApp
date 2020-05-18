@@ -1,0 +1,68 @@
+WindowManager:
+    MenuWindow:
+    DownloadManager:
+
+<MenuWindow>:
+    name: 'main'
+
+    url: url
+    video: video
+    audio: audio
+    downloadbtn: downloadbtn
+    canvas:
+        Rectangle:
+            source: "background4.png"
+            pos: self.pos
+            size: self.size
+
+    FloatLayout:
+        TextInput:
+            id: url
+            pos_hint: {'x': .1, 'y': .8}
+            size_hint: .8, .1
+            multiline: False
+            hint_text: "Paste Your URL here"
+            font_size: 20
+            border: (50,50,50,50)
+        PasteButton:
+            source: 'Paste.png'
+            pos_hint: {'x': .3, 'y': .6}
+            size_hint: .4, .1
+            on_release:
+                root.paste()
+
+        Label:
+            text: 'Audio'
+            pos_hint: {'x': .1, 'y': .3}
+            size_hint: .4, .1
+            font_size: 30
+
+        AudioButton:
+            id: audio
+            source: 'technology.png'
+            pos_hint: {'x': .1, 'y': .4}
+            size_hint: .4, .1
+            on_release:
+                root.audio_down()
+
+        Label:
+            text: 'Video'
+            pos_hint: {'x': .5, 'y': .3}
+            size_hint: .4, .1
+            font_size: 30
+        VideoButton:
+            id: video
+            source: 'multimedia.png'
+            pos_hint: {'x': .5, 'y': .4}
+            size_hint: .4, .1
+            on_release:
+                root.video_down()
+        DownloadButton:
+            id: downloadbtn
+            source: 'arrows.png'
+            pos_hint: {'x': .28, 'y': .1}
+            size_hint: .45, .2
+            on_release:
+                root.download()
+
+
