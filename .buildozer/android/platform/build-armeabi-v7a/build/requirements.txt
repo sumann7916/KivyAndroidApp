@@ -1,0 +1,3 @@
+backports.ssl-match-hostname
+pytube3
+typing-extensions
